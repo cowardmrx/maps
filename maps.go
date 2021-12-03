@@ -5,13 +5,6 @@ import (
 	"sync"
 )
 
-const (
-	// SortAsc sort by asc
-	SortAsc = "asc"
-	// SortDesc sort by desc
-	SortDesc = "desc"
-)
-
 type maps struct {
 	rw    sync.RWMutex
 	Key   []string

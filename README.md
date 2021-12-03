@@ -28,8 +28,20 @@ maps.Values()
 // GetMapsOriginMap get this maps origin data return a map[string]interface
 maps.OriginMap()
 
-// SortKey sort this maps by keys
+// SortKey sort this maps by keys  asc
 maps.SortKey()
+
+// other sort
+// sort by desc
+sort.Slice(maps.Keys,func (i,j int) bool {
+    return maps.Keys()[i] > maps.Keys()[j]
+})
+
+// sort by asc
+sort.Slice(maps.Keys,func (i,j int) bool {
+    return maps.Keys()[i] < maps.Keys()[j]
+})
+
 
 // other example ./maps_test.go
 ```

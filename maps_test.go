@@ -62,3 +62,17 @@ func TestSortKey(t *testing.T) {
 
 	fmt.Println(a)
 }
+
+func TestSort(t *testing.T) {
+	maps := NewMaps()
+
+	a := maps.Set("key3", "value1").Set("key4", "value 2").Set("key1", "value 3")
+
+	sort.Slice(a.Keys(), func(i, j int) bool {
+		return a.Keys()[i] > a.Keys()[j]
+	})
+
+	fmt.Println(a.Keys())
+	fmt.Println(a.Values())
+	fmt.Println(a.OriginMap())
+}
